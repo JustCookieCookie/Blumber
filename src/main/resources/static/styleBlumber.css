@@ -1,0 +1,197 @@
+body {
+    font-family: "Cabin", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(255, 249, 251);
+    position: relative;
+}
+header {
+    height: 100px;
+}
+#logoPng {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 10px;
+    top: -102px;
+}
+#title {
+    position: relative;
+    font-weight: bold;
+    font-size: 34px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.512);
+
+    padding: 20px 0px 20px 85px;
+
+    background: -webkit-linear-gradient(90deg, rgb(232, 135, 230), rgb(234, 181, 234));
+    background: -moz-linear-gradient(90deg, rgb(232, 135, 230), rgb(234, 181, 234));
+    background: linear-gradient(90deg, rgb(232, 135, 230), rgb(234, 181, 234));                                        
+    margin-top: auto;
+}
+.links {
+    display: none;
+
+    position: relative;
+
+    text-align: right;
+    justify-content: right;
+    top: -218px;
+    margin-right: 5px;
+}
+.link {
+    padding: 0px 7px;
+
+    font-size: 18px;
+
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+    font-family: "Cabin", sans-serif;
+}
+.links select {
+    border: 0px;
+    background-color: rgba(254, 218, 237, 0.652);
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+#submitGender {
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    width: max-content;
+    font-size: 15px;
+    padding: 3px 6px;
+
+    border: 0px;
+    border-radius: 4px;
+    background-color: rgba(254, 218, 237, 0.652);
+
+    position: relative;
+    margin-top: 5px;
+    margin-right: 29px;
+}
+#contact {
+    padding: 0px 10px 0px 0px;
+}
+#chooseGender {
+    margin: 0px 10px 0px 0px;
+}
+#settingsLink {
+    padding: 0px 10px;
+    margin-right: 2%;
+}
+.links a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.photo {
+    max-width: 300px;
+    width: 80%;
+    max-height: 400px;
+    height: auto;
+}
+.twoPhotos {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+}
+.twoPhotos p {
+    word-wrap: break-word;
+}
+.borderPhoto {
+    border: 0px solid black;
+    background-color: rgba(254, 218, 237, 0.652);
+    border-radius: 10px;
+    text-align: center;
+
+    padding: 20px 15px 0px 15px;
+    margin-bottom: 40px;
+    
+    width: 300px;
+    height: fit-content;
+
+    transition: background-color 0.2s ease-in-out;
+}
+#photoOne {
+    margin-left: 3%;
+    margin-right: 2%;
+}
+#photoTwo {
+    margin-left: 2%;
+    margin-right: 3%;
+}
+.titleHeight {
+    height: 0px;
+}
+#settings {
+    display: block;
+
+    width: 45px;
+    height: 45px;
+
+    position: relative;
+    top: -161px;
+    margin-left: auto;
+    margin-right: 18px;
+
+    transition: transform 0.2s ease;
+}
+#settings:active {
+    transform: rotate(30deg);
+}
+.contactLink {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.contactLink:hover {
+    text-decoration: underline;
+}
+@media screen and (min-width: 730px) {
+    #settings {
+        display: none;
+    }
+    .links {
+        display: flex;
+    }
+    header {
+        height: 150px;
+    }
+    #title {
+        padding: 30px 0px 30px 120px;
+        font-size: 47px;
+    }
+    .borderPhoto {
+        padding: 30px 7px 0px 7px;
+    }
+    .borderPhoto:hover, #submitGender:hover {
+        background-color: rgba(247, 210, 230, 0.652);
+    }
+    #photoOne {
+        margin-right: 4%;
+    }
+    #photoTwo {
+        margin-left: 4%;
+    }
+    #logoPng {
+        width: 100px;
+        height: 100px;
+        left: 10px;
+        top: -152px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .twoPhotos {
+        font-size: 18px;
+    }
+}
+
+.borderPhoto:active, #submitGender:active {
+    background-color: rgba(238, 201, 220, 0.652);
+}
