@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/blumberSrc/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" th:href="@{/styleBlumber.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <title>Blumber</title>
+</head>
+<body>
+
+    <header>
+        <p id="title">Blumber</p>
+        <img src="/blumberSrc/LogoPng.png" id="logoPng" alt="logo">
+
+        <div class="links">
+            <a href="mailto:blumber.business@gmail.com" class="link" id="contact">Contact us</a>
+            <div class="gender link">
+                <label class="link" for="chooseGender">My gender:</label>
+                <select name="chooseGender" id="chooseGender" class="link">
+                    <option value="Man" id="man">Man</option>
+                    <option value="Woman" id="woman">Woman</option>
+                </select><br>
+                <button type="submit" id="submitGender" onclick="confirmGender()">CONFIRM</button>
+            </div>
+            <a href="/settings" class="link" id="settingsLink">Settings</a>
+        </div>
+
+        <a href="/settings"><img src="/blumberSrc/settingsPng.png" alt="settings" id="settings"></a>
+
+    </header>
+
+
+    <main>
+        <div class="twoPhotos">
+
+            <div class="borderPhoto" id="photoOne" onclick="newProfile(1)">
+                <img th:src="${userPhoto}" class="photo" id="photoOnePicture" alt="photo_one">
+                <h4 class="titleHeight">Name:</h4>
+                <p th:text="${userName}" id="userName1"></p>
+                <h4 class="titleHeight">Gender:</h4>
+                <p th:text="${userGender}" id="userGender1"></p>
+                <h4 class="titleHeight">About me:</h4>
+                <p th:text="${aboutUser}" id="aboutUser1"></p>
+                <h4 class="titleHeight">Contact:</h4>
+                <a th:href="${userContactLink}" id="userContactLink1" target="_blank" class="contactLink" th:text="${userContactLinkName}" ></a>
+            </div>
+
+            <div class="borderPhoto" id="photoTwo" onclick="newProfile(2)">
+                <img th:src="${userPhoto2}" class="photo" id="photoTwoPicture" alt="photo_two">
+                <h4 class="titleHeight">Name:</h4>
+                <p th:text="${userName2}" id="userName2"></p>
+                <h4 class="titleHeight">Gender:</h4>
+                <p th:text="${userGender2}" id="userGender2"></p>
+                <h4 class="titleHeight">About me:</h4>
+                <p th:text="${aboutUser2}" id="aboutUser2"></p>
+                <h4 class="titleHeight">Contact:</h4>
+                <a th:href="${userContactLink2}" id="userContactLink2" target="_blank" class="contactLink" th:text="${userContactLinkName2}"></a>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+ 
+    </footer>
+
+    <script type="text/javascript" th:src="@{/scriptIndexBlumber.js}"></script>
+    <script type="text/javascript" th:src="@{/userKeyGeneration.js}"></script>
+    <script type="text/javascript" th:src="@{/newProfile.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>
