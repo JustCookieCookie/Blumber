@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/blumberSrc/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" th:href="@{/settingsStyleBlumber.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <title>Blumber Settings</title>
+</head>
+<body>
+
+    <header>
+        <p id="title">Blumber Settings</p>
+        <a href="/loadingpage"><img src="/blumberSrc/back.png" id="backPhoto" alt="back"></a>
+    </header>
+
+    <main>
+        <div class="settings">
+            <label for="mail" class="titleSettings">Contact us:</label><br>
+            <a href="mailto:blumber.business@gmail.com" id="mail">blumber.business@gmail.com</a><br><br>
+
+            <div class="line"></div>
+            <br>
+
+            <label for="chooseGender" class="titleSettings">My gender:</label><br>
+            <select name="chooseGender" id="chooseGender" class="select">
+                <option value="Man" id="man">Man</option>
+                <option value="Woman" id="woman">Woman</option>
+            </select>
+
+            <button type="submit" class="settingsButtons" id="confirmGenderButton" onclick="confirmGender()">CONFIRM</button><br><br>
+
+            <div class="line"></div>
+            <br>
+
+            <label class="titleSettings">My profile:</label>
+            <br><br>
+
+            <label for="inputUserPhoto">Profile photo:</label><br>
+            <label id="inputUserPhotoStyle">
+                SELECT FILE
+                <input type="file" name="inputUserPhoto" id="inputUserPhoto" accept="image/*"><br><br>
+            </label>
+            <img src="" id="imgUserPhoto" alt="User Photo">
+
+            <label for="inputName">Name:</label><br>
+            <input type="text" name="inputName" class="inputPlace" id="inputName" maxlength="30">
+            <br><br>
+
+            <label for="inputAboutMe">About me:</label><br>
+            <textarea name="inputAboutMe" class="inputPlace" id="inputAboutMe" maxlength="230" onkeypress="autoGrow(this)" onkeyup="autoGrow(this)"></textarea>
+            <br><br>
+
+            <label for="inputMyContact">Contact:</label><br>
+            <input type="text" name="inputMyContact" class="inputPlace" id="inputMyContactText" placeholder="Link name" maxlength="30">
+            <input type="text" name="inputMyContact" class="inputPlace" id="inputMyContact" placeholder="The link itself" maxlength="100">
+
+            <div class="h-captcha" 
+            data-sitekey="237c7a1c-60e6-44e4-9450-f48625403342"></div>
+
+            <button type="submit" class="settingsButtons" id="settingsSaveButton" onclick="confirmSave()">SAVE PROFILE</button>
+            <button type="button" class="settingsButtons" onclick="confirmDelete()">DELETE PROFILE</button>
+            
+            <br>
+
+            <div id="confirmationWindow">
+                <p id="paragraph"></p>
+                <div class="confrimButtons">
+                    <button type="submit" class="settingsButtons" id="buttonConfirm" onclick="saveSettings()">CONFIRM</button>
+                    <button type="submit" class="settingsButtons" id="buttonDelete" onclick="deleteProfile()">CONFIRM</button>
+                    <button type="reset" class="settingsButtons" id="buttonCancel" onclick="cancelWindow()">CANCEL</button>
+                </div>
+            </div>
+
+            <p id="statusBar"></p>
+        </div>
+    
+    </main>
+
+
+    <footer>
+          
+    </footer>
+
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <script type="text/javascript" th:src="@{/scriptSettingsBlumber.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</body>
+</html>
